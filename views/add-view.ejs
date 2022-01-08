@@ -1,0 +1,17 @@
+<%- include('partials/head') -%> 
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 offset-1">
+                <form action="/save" method="POST">
+                    <input type="text" name="name" class="form-control" placeholder="Name"><br>
+                    <input type="text" name="price" class="form-control" placeholder="Price"><br>
+                    <input type="text" name="used" class="form-control" placeholder="Used"><br>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/footer') -%> 
