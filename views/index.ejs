@@ -10,14 +10,29 @@
 <body>
     <div class="text-center">
         <h3>Cars App</h3>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-primary">Create</button>
+        <button type="button" class="btn btn-primary">Edit</button>
+        <button type="button" class="btn btn-primary">Delete</button>
     </div>
-    <ul>
-        <% for(let i=0; i<data.length; i++) { %>
-            <li><%= data[i].name  %> </li>
-        <% } %> 
-    </ul>
+    <table class="table text-center" style="width: 60%; margin-left: auto; margin-right: auto;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Used</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0; i<data.length; i++) { %>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><%= data[i].name  %></td>
+                    <td><%= data[i].price  %></td>
+                    <td>@<%= data[i].used  %></td>
+                </tr>
+            <% } %> 
+        </tbody>
+      </table>
 </body>
 </html>
