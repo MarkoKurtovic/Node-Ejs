@@ -1,4 +1,5 @@
 const express = require('express');
+const res = require('express/lib/response');
 const mongojs = require('mongojs');
 const db = mongojs('marko', ['cars']);
 
@@ -23,6 +24,19 @@ app.post('/save', (req,res)=>{
         price : req.body.price,
         used : req.body.used
     },(err,data)=>{ 
+        res.redirect('/')
+    })
+})
+
+app.get('/edit', (req,res) =>{
+    db.cars.find((err,data)=>{
+        res.render('edit-view', {data:data})
+    })
+})
+
+app.get('/delete/:id', (req,res) =>{
+    let id= req.params.id;
+    db.cars.remove({"_id" : db.ObjectId(id)}, (err,data)=>{
         res.redirect('/')
     })
 })

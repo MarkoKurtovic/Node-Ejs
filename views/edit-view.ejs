@@ -8,7 +8,6 @@
         <th scope="col">Name</th> 
         <th scope="col">Price</th>
         <th scope="col">Used</th>
-        <th scope="col">ACtion</th>
       </tr>
     </thead>
     <tbody>
@@ -17,8 +16,7 @@
                       <th scope="row">1</th>
                       <td><%= data[i].name  %></td>
                       <td><%= data[i].price  %></td>
-                      <td><%= data[i].used  %></td>
-                      <td><a type="submit" class="btn btn-primary">Edit</a> <a type="submit"href="/delete/<%= data[i]._id  %>" class="btn btn-danger">Delete</a></td>
+                      <td>@<%= data[i].used  %></td>
                   </tr>
               <% } %> 
           </tbody>
