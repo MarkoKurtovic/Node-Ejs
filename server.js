@@ -41,6 +41,18 @@ app.get('/delete/:id', (req,res) =>{
         res.redirect('/')
     })
 })
+
+app.post('/update', (req,res) =>{
+    let id= req.body.id;
+    db.cars.update({"_id" : db.ObjectId(id)}, {$set:{
+        name : req.body.name,
+        price : req.body.price,
+        used : req.body.used,
+
+    }},(err,data)=>{
+        res.redirect('/')
+    })
+})
 app.listen(3000, () =>{
     console.log('listening to port 3000');
 })

@@ -3,11 +3,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-5 offset-1">
-                <form action="/save" method="POST">
+                <form action="/update" method="POST">
                     <input type="text" name="name" class="form-control" placeholder="Name" value="<%= data.name  %>"><br>
                     <input type="text" name="price" class="form-control" placeholder="Price" value="<%= data.price  %>"><br>
                     <input type="text" name="used" class="form-control" placeholder="Used" value="<%= data.used  %>"><br>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <input type="hidden" name="id" class="form-control" placeholder="Used" value="<%= data._id  %>"><br>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
                 </form>
         </div>
     </div>
