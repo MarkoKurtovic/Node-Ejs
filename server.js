@@ -28,8 +28,9 @@ app.post('/save', (req,res)=>{
     })
 })
 
-app.get('/edit', (req,res) =>{
-    db.cars.find((err,data)=>{
+app.get('/edit/:id', (req,res) =>{
+    let id = req.params.id;
+    db.cars.findOne({"_id": db.ObjectId(id)}, (err,data)=>{
         res.render('edit-view', {data:data})
     })
 })

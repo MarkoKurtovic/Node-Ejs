@@ -1,26 +1,17 @@
 <%- include('partials/head') -%> 
+
 <div class="container">
-  <div class="row justify-content-center">
-  <table class="table text-center">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th> 
-        <th scope="col">Price</th>
-        <th scope="col">Used</th>
-      </tr>
-    </thead>
-    <tbody>
-              <% for(let i=0; i<data.length; i++) { %>
-                  <tr>
-                      <th scope="row">1</th>
-                      <td><%= data[i].name  %></td>
-                      <td><%= data[i].price  %></td>
-                      <td>@<%= data[i].used  %></td>
-                  </tr>
-              <% } %> 
-          </tbody>
-        </table>
-  </div>
+    <div class="row justify-content-center">
+        <div class="col-5 offset-1">
+                <form action="/save" method="POST">
+                    <input type="text" name="name" class="form-control" placeholder="Name" value="<%= data.name  %>"><br>
+                    <input type="text" name="price" class="form-control" placeholder="Price" value="<%= data.price  %>"><br>
+                    <input type="text" name="used" class="form-control" placeholder="Used" value="<%= data.used  %>"><br>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+        </div>
+    </div>
 </div>
-      <%- include('partials/footer') -%> 
+
+
+<%- include('partials/footer') -%> 
